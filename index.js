@@ -2,6 +2,7 @@ const cell = document.querySelectorAll(".cell");
 const player1Score = document.querySelector(".player1Score");
 const player2Score = document.querySelector(".player2Score");
 const restart = document.querySelector(".restart");
+const announceWin = document.querySelector(".announceWin");
 
 console.log(cell);
 
@@ -51,13 +52,13 @@ function addCellsPlayer2(i) {
 function checkWinner() {
   winPositions.find((item) => {
     if (item.filter((i) => player1.includes(i)).length === 3) {
-      alert("Player 1 Won!!!");
+      announceWin.innerHTML = "<h1>Player 1 Won!!!</h1>";
       score.player1++;
       drawScore();
       clearField();
       return item;
     } else if (item.filter((i) => player2.includes(i)).length === 3) {
-      alert("Player 2 Won!!!");
+      announceWin.innerHTML = "<h1>Player 2 Won!!!</h1>";
       score.player2++;
       drawScore();
       clearField();
